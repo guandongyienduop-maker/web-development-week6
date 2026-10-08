@@ -1,0 +1,406 @@
+/* =========================
+   CSS THEME VARIABLES
+========================= */
+
+:root {
+    --brand-color: #172554;
+    --accent-color: #2563eb;
+    --surface-color: #f4f6f8;
+    --primary-text: #1f2937;
+    --secondary-text: #6b7280;
+    --card-color: #ffffff;
+    --light-text: #dbeafe;
+}
+
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--surface-color);
+    color: var(--primary-text);
+}
+
+
+/* =========================
+   MAIN DASHBOARD LAYOUT
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    background-color: var(--brand-color);
+    color: white;
+    padding: 30px 20px;
+}
+
+
+.logo {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.navigation a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 250ms ease;
+}
+
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: var(--accent-color);
+    color: var(--card-color);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    padding: 30px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+
+.header h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+
+.header p {
+    color: var(--secondary-text);
+}
+
+
+/* =========================
+   USER PROFILE
+========================= */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--card-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   BUDGET SUMMARY
+========================= */
+
+.budget-summary {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.budget-summary h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+.budget-details {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+
+.budget-details p {
+    color: var(--secondary-text);
+}
+
+
+.budget-details strong {
+    display: block;
+    color: var(--primary-text);
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+
+#budgetMessage {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   EXPENSE FORM
+========================= */
+
+.expense-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.expense-form input {
+    padding: 12px;
+    width: 200px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+
+.expense-form input:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.expense-form button {
+    border: none;
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    background-color: var(--accent-color);
+    color: white;
+
+    cursor: pointer;
+    font-size: 15px;
+
+    transition: 250ms ease;
+}
+
+
+.expense-form button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+.expense-form button:focus {
+    outline: 2px solid var(--brand-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.category-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
+.category-card {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Keyboard focus */
+
+.category-card:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* Mouse hover */
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+.category-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+.description {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 767px) {
+
+    /* Change dashboard to one column */
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Adjust main content spacing */
+
+    .main-content {
+        padding: 20px;
+    }
+
+
+    /* Stack header content */
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    /* Display cards in one column */
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Stack budget information */
+
+    .budget-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    /* Stack expense form */
+
+    .expense-form {
+        flex-direction: column;
+    }
+
+
+    .expense-form input,
+    .expense-form button {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   DARK THEME - STRETCH GOAL
+========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #0f172a;
+        --accent-color: #3b82f6;
+        --surface-color: #111827;
+        --primary-text: #f9fafb;
+        --secondary-text: #9ca3af;
+        --card-color: #1f2937;
+        --light-text: #dbeafe;
+    }
+}
+
